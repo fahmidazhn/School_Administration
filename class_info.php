@@ -1,15 +1,7 @@
 <?php
 include 'header.php';
 include 'footer.php';
-
-//Start session
-session_start();
- 
-//Check whether the session variable SESS_MEMBER_ID is present or not
-if(!isset($_SESSION['sess_username'])) {
-	header("location: login_form.php");
-	exit();
-}?>
+?>
 
 <html>
 <head>
@@ -27,6 +19,7 @@ function showImage(divID){
 </head>
  
 <body>
+
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" vspace="30px;">
   <tr>
@@ -56,7 +49,7 @@ function showImage(divID){
 <?php
     $db = mysql_connect("localhost", "root", "") or die(mysql_error());
     mysql_select_db ("school_database", $db);
-    $query = "SELECT * FROM teacher_info WHERE id= '10301018'";	
+    $query = "SELECT * FROM teacher_info WHERE id= '10321003'";	
     $result = mysql_query($query) or die ("Unable to verify user because " . mysql_error());	
 echo "<table>";
 while($row = mysql_fetch_array($result)) {
@@ -90,7 +83,7 @@ mysql_close($db);
 <?php
     $db = mysql_connect("localhost", "root", "") or die(mysql_error());
     mysql_select_db ("school_database", $db);
-    $query = "SELECT * FROM teacher_info WHERE id= '10301017'";	
+    $query = "SELECT * FROM teacher_info WHERE id= '10301015'";	
     $result = mysql_query($query) or die ("Unable to verify user because " . mysql_error());	
 echo "<table>";
 while($row = mysql_fetch_array($result)) {

@@ -61,7 +61,7 @@ echo $username;
 <?php
     $db = mysql_connect("localhost", "root", "") or die(mysql_error());
     mysql_select_db ("school_database", $db);
-    $query = "SELECT * FROM teacher_info WHERE id= '10301018'";	
+    $query = "SELECT * FROM teacher_info WHERE id= '10321003'";	
     $result = mysql_query($query) or die ("Unable to verify user because " . mysql_error());	
 echo "<table>";
 while($row = mysql_fetch_array($result)) {
@@ -95,7 +95,7 @@ mysql_close($db);
 <?php
     $db = mysql_connect("localhost", "root", "") or die(mysql_error());
     mysql_select_db ("school_database", $db);
-    $query = "SELECT * FROM teacher_info WHERE id= '10301017'";	
+    $query = "SELECT * FROM teacher_info WHERE id= '10301015'";	
     $result = mysql_query($query) or die ("Unable to verify user because " . mysql_error());	
 echo "<table>";
 while($row = mysql_fetch_array($result)) {

@@ -13,7 +13,7 @@ include 'footer.php';
 
     <table align="center" class = "index-table" >
     <tr>
-    <td><a href = "login_form.php" /><img src = "images/admin_icon.png" /><br />Administration</a></td>
+    <td><a href = "admin/login_form.php" /><img src = "images/admin_icon.png" /><br />Administration</a></td>
     <td><a href = "staff/index.php" /><img src = "images/staff_icon.png" /><br />Staff's Corner</a></td>
     <td><a href = "teacher/index.php" /><img src = "images/teacher_icon.png"/><br />Teacher's Corner</a></td>
     

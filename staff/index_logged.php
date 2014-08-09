@@ -73,7 +73,7 @@ echo $username;
     <h3 style="color:#C33"> Welcome!</h3><br>
     <div style="padding-left:18px;">
     <li><a href="personal_info.php">Personal Info</a></li><br>
-    <li><a href="educational_info.php">Educational Info</a></li><br>
+    <li><a href="edu_info.php">Educational Info</a></li><br>
     <li><a href="contact_info.php">Contact Info</a></li><br>
 
 </div>

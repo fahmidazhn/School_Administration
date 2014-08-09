@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 09, 2014 at 01:44 PM
+-- Generation Time: Aug 09, 2014 at 08:58 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `calendar_events` (
   `event_shortdesc` varchar(255) DEFAULT NULL,
   `event_start` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `calendar_events`
@@ -41,7 +41,8 @@ INSERT INTO `calendar_events` (`id`, `event_title`, `event_shortdesc`, `event_st
 (1, '\r\n			Final Exam', 'Summer14 final examination', '1980-08-20 01:00:00'),
 (2, '\r\n			', '', '1980-08-20 01:00:00'),
 (3, '\r\n			Summer14 Exam', 'Final examination', '2014-08-01 01:00:00'),
-(4, '\r\n			', '', '2010-08-12 01:15:00');
+(4, '\r\n			', '', '2010-08-12 01:15:00'),
+(5, '\n			Exam Recess', '', '2014-08-06 01:00:00');
 
 -- --------------------------------------------------------
 

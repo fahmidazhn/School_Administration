@@ -30,6 +30,7 @@ $db = mysql_connect("localhost", "root", "") or die(mysql_error());
 ?> 
 <html>
 <body>
+<div id="form" style=" padding-left:140px; padding-right:20px; color:#06F; text-align:left; width:400px; padding-top:40px;">
 <form action="add_teacher.php" method="post" enctype="application/x-www-form-urlencoded">
 <dl>
 <dt>
@@ -37,7 +38,6 @@ $db = mysql_connect("localhost", "root", "") or die(mysql_error());
     </dl>
     </form>
 
-
-</form>
+</div>
 </body>
 </html>

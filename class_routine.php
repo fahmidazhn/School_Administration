@@ -1,15 +1,7 @@
 <?php
 include 'header.php';
 include 'footer.php';
-
-//Start session
-session_start();
- 
-//Check whether the session variable SESS_MEMBER_ID is present or not
-if(!isset($_SESSION['sess_username'])) {
-	header("location: login_form.php");
-	exit();
-}?>
+?>
 <html>
 <head>
 <script language="javascript">
@@ -26,6 +18,7 @@ function showImage(divID){
 </head>
  
 <body>
+
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" vspace="30px;">
   <tr>
