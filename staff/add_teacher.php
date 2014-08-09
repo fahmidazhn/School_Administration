@@ -1,34 +1,153 @@
-<?php include 'header.php';
+<?php
+include 'header_logged.php';
+include 'footer.php';
 
-$msg = "";
+//Start session
+session_start();
+ 
+//Check whether the session variable SESS_MEMBER_ID is present or not
+if(!isset($_SESSION['sess_username'])) {
+	header("location: login_form.php");
+	exit();
+}?>
+<html>
+<head>
+<title>School Administrative System </title>
+<link href = "css/style.css" rel = "stylesheet" />
 
-mysql_connect("localhost","root","");
-mysql_select_db("school_database");
-if (isset($_POST["doctorid"])) {
-	extract($_POST);
-	$query = mysql_query("select * from doctor where doctorid = '$doctorid'");
-	if (!mysql_num_rows($query) > 0) {
-		mysql_query("insert into doctor VALUES ('$doctorid','$fname','$mname','$lname','$dept')");
-		$msg = "Doctor Successfully Added!";
-	} else {
-		$msg = "Doctor ID Already Exists!";
-	}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script> 
+
+$(document).ready(function(){	
+	
+  $("#flip1").click(function(){
+    $("#panel1").slideToggle("slow");
+		$("#panel2").slideUp("slow");
+		$("#panel3").slideUp("slow");
+		$("#panel4").slideUp("slow");
+  });
+  $("#flip2").click(function(){
+    $("#panel2").slideToggle("slow");
+		$("#panel1").slideUp("slow");
+		$("#panel3").slideUp("slow");
+		$("#panel4").slideUp("slow");	
+  });  
+  $("#flip3").click(function(){
+    $("#panel3").slideToggle("slow");
+		$("#panel1").slideUp("slow");
+		$("#panel2").slideUp("slow");
+		$("#panel4").slideUp("slow");	
+  });  
+  $("#flip4").click(function(){
+    $("#panel4").slideToggle("slow");
+		$("#panel1").slideUp("slow");
+		$("#panel2").slideUp("slow");
+		$("#panel3").slideUp("slow");	
+  });  
+});
+</script>
+<style> 
+#panel1,#panel2,#panel3,#panel4,#flip1,#flip2,#flip3,#flip4
+{
+width:380px;
+padding:2px;
+text-align:center;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
 }
+#panel1,#panel2,#panel3,#panel4
+{
+padding:2px;
+display:none;
+}
+</style>
+ 
+</head>
+<body>
+<h2 style="padding-left: 14px;"><a href="index_logged.php">Dashboard</a></h2>
+<h4 style=" text-align:right; color:#039; padding-right: 14px;">You are logged in as <?php 
+$username= $_SESSION["sess_username"];
+echo $username;
+?> !</h4>
+    <div id="form" style=" padding-left:140px; padding-right:20px; float:left; color:#06F; text-align:center; width:400px; padding-top:20px;">
+    
+    
+<form style="text-align:left;" action="add_teacher_info.php" method="post" enctype="application/x-www-form-urlencoded" >
+ID: &nbsp; <input type = "text" name = "id"><br /><br />
+First name: &nbsp; <input type = "text" name = "firstname"><br /><br />
+Last name: &nbsp; <input type="text" name="lastname"><br /><br />
+<INPUT TYPE="submit" name="Submit" value="Submit">
+</form>
+</div>
+    
+<div style="width:380px; float:right; padding-right:14px;">
 
+<div id="flip1"><h4>OFFICE OF THE PRINCIPAL</h4></div>
+<div id="panel1">
+	<table align="center" class = "index-table" cellspacing="20px" >
+    <tr>
+    <td>Ms. Tanvia Kareem</td>
+    <td>Principal</td>
+    <td>Telephone: 04478444029<br/>Email: tanvia@gmail.com</td>
+    </tr>  
+    <tr>
+    <td>Md. Nasim Ahmed</td>
+    <td>Vice Principal</td>
+    <td>Telephone: 04478444056<br/>Email: mdnasoykot@gmail.com</td>
+    </tr>  
+    </table>
+    </div>
+    
+<div id="flip2"><h4>ACCOUNTS AND FINANCE</h4></div>
+<div id="panel2">
+	<table align="center" class = "index-table" cellspacing="20px" >
+    <tr>
+    <td>Mr. Maruf Sami</td>
+    <td>Head Of Accounts</td>
+    <td>Telephone: 04478444040<br/>Email: sami@gmail.com</td>
+    </tr>
+    <tr>
+    <td>A.N.M Sabbir</td>
+    <td>Accounts Officer</td>
+    <td>Telephone: 04478444020<br/>Email: anm.sabbir@gmail.com</td>
+    </tr>  
+    <tr>
+    <td>Ms. Nusrat Zahan</td>
+    <td>Assistant Accounts Officer</td>
+    <td>Telephone: 04478444044<br/>Email: nusratzahan@bracu.ac.bd</td>
+    </tr>
+    </table>
+    </div>
+    
+<div id="flip3"><h4>IT SYSTEMS OFFICE</h4></div>
+<div id="panel3">
+	<table align="center" class = "index-table" cellspacing="20px" >
+    <tr>
+    <td>Mr. Mahin Ahmed</td>
+    <td>IT Officer</td>
+    <td>Mobile: 01922655566<br/>Email: mdmahinahmd@gmail.com</td>
+    </tr>  
+    <tr>
+    <td>Md. Shadman</td>
+    <td>IT Manager</td>
+    <td>Telephone: 04478444036<br/>Email: msadman@gmail.com</td>
+    </tr>  
+    </table>
+    </div>
+    
+<div id="flip4"><h4>MEDICAL OFFICE</h4></div>
+<div id="panel4">
+	<table align="center" class = "index-table" cellspacing="20px" >
+    <tr>
+    <td>Dr Salina Akhter</td>
+    <td>Medical Consultant</td>
+    <td>Telephone: 04478444026<br/>Email: salinaakt@gmail.com</td>
+    </tr>  
+    </table>
+    </div>
+    
 
-?>
+</div>   
+</body>
+</html>
 
-<form action = "" method = "post" />
-<table class = "box-table-a" >
-<?php if ($msg != "") { ?><tr><td></td><td><?=$msg;?></td></tr><?php } ?>
-<tr><td class = "left" >Teacher ID</td><td class = "right" ><input type = "text" name = "doctorid" /></td></tr>
-<tr><td>First Name</td><td><input type = "text" name = "fname" /></td></tr>
-<tr><td>Middle Name</td><td><input type = "text" name = "mname" /></td></tr>
-<tr><td>Last Name</td><td><input type = "text" name = "lname" /></td></tr>
-<tr><td>Date of Birth</td><td><input type = "text" name = "dept" /></td></tr>
-</table>
-<button style = "margin-left: 20px;" >Submit</button>
-
-<form>
-
-<?php include 'footer.php'; ?>

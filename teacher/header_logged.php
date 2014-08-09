@@ -7,15 +7,7 @@
 
 <div id='cssmenu'>
 <ul> 
-   <li><a href='../index.php'><span>Home</span></a></li>
-   <li class='has-sub '><a href='javascript:void(0)'><span>Teacher</span></a>
-		<ul>
-		   <li><a href='teacher_list.php'><span>List of Teacher</span></a></li>
-           <li><a href='teacher_info.php'><span>Personal Info</span></a></li>          
-		   <li><a href='teacher_routine.php'><span>Routine</span></a></li>
-           <li><a href='teacher_payment.php'><span>Payment History</span></a></li>
-		</ul>
-   </li>  
+   <li><a href='../index.php'><span>Home</span></a></li>  
    <li class='has-sub '><a href='javascript:void(0)'><span>Student</span></a>
 		<ul>
 		   <li><a href='student_info.php'><span>Personal Info</span></a></li>
@@ -26,9 +18,9 @@
    </li>  
    <li class='has-sub '><a href='javascript:void(0)'><span>Classroom</span></a>
 		<ul>
-           <li><a href='class_info'><span>Class Info</span></a></li>
+           <li><a href='class_info.php'><span>Class Info</span></a></li>
 		   <li><a href='class_routine.php'><span>Class Routine</span></a></li>
-		   <li><a href='class_teacher'><span>Class Teacher</span></a></li>
+		   <li><a href='class_info.php'><span>Class Teacher</span></a></li>
 		</ul>
    </li>  
    <li><a href='calender.php'><span>Calender</span></a></li>

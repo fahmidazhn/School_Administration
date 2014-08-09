@@ -7,60 +7,56 @@ include 'footer.php';
 <head>
 <title>School Administrative System </title>
 <link href = "css/style.css" rel = "stylesheet" />
-</head>
-<body>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script> 
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel").slideToggle("slow");
-  });
-});
-</script>
- 
-<style> 
-#panel,#flip
-{
-padding:5px;
-text-align:center;
-background-color:#e5eecc;
-border:solid 1px #c3c3c3;
+<style>
+table {
+	margin-left:40px;
+    border-collapse: collapse;
+	
 }
-#panel
-{
-padding:50px;
-display:none;
+table, td, th {
+	font:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	
+	padding: 20px 60px 20px 60px;
+	text-align:center;
+	color:#009;
+}
+
+th {
+    background-color:#DFE3FF;
+    color:#009;
+	border: 1px solid #06F;
+}
+td {border: 1px solid #06F;
 }
 </style>
+
 </head>
 <body>
- 
-<div id="flip">Click to slide the panel down or up</div>
-<div id="panel">Hello world!</div>
+<h2 style="padding-left: 14px; color:#C33;">Teacher's Corner</h2>
 
-/*more code*/
-<div class="div1" style="padding-top:100px;">
-    <h2>STAFF</h2>
-    <table align="left" class = "index-table" >
-    <tr>
-    <td><a href = "login_form.php" />OFFICE OF THE VICE CHANCELLOR</a></td>
-    </tr>    
-    <tr>
-    <td><a href = "login_form.php" />OFFICE OF THE REGISTRAR</a></td>
-    </tr>   
-    <tr>
-    <td><a href = "login_form.php" />ACCOUNTS AND FINANCE</a></td>
-    </tr>
-    <tr>
-    <td><a href = "login_form.php" />ADMINISTRATION</a></td>
-    </tr>
-    <tr>
-    <td><a href = "login_form.php" />IT SYSTEMS OFFICE</a></td>
-    </tr>
+<?php
+    $db = mysql_connect("localhost", "root", "") or die(mysql_error());
+    mysql_select_db ("school_database", $db);
+    $query = "SELECT * FROM teacher_info";	
+    $result = mysql_query($query) or die ("Unable to verify user because " . mysql_error());
+	
+echo "<table>";
+ echo "<tr><th>ID</th><th>Name</th><th>Email</th></tr>";
+
+while($row = mysql_fetch_array($result)) {
+  echo "<tr>";
+  echo "<td>" . $row['id'] ."</td>";
+  echo "<td>" . $row['firstname'] ."&nbsp;". $row['lastname'] ."</td>";
+  echo "<td>".$row['email'] . "</td>";
+  echo "</tr>";
+}
+
+echo "</table>";
+
+mysql_close($db);
+?>
+
     
-    </tr>
-    </table>
-</div>
 </body>
 </html>
