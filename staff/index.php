@@ -55,7 +55,7 @@ display:none;
  
 </head>
 <body>
-<h2 style="padding-left: 14px; color:#C33;">STAFF</h2>
+<h2 style="padding-left: 14px;">STAFF</h2>
 <div id="flip1"><h4>OFFICE OF THE PRINCIPAL</h4></div>
 <div id="panel1">
 	<table align="center" class = "index-table" cellspacing="40px" >

@@ -1,15 +1,8 @@
 <?php
 include 'header_logged.php';
 include 'footer.php';
+?>
 
-//Start session
-session_start();
- 
-//Check whether the session variable SESS_MEMBER_ID is present or not
-if(!isset($_SESSION['sess_username'])) {
-	header("location: login_form.php");
-	exit();
-}?>
 <html>
 <head>
 <title>School Administrative System </title>
@@ -64,22 +57,13 @@ display:none;
  
 </head>
 <body>
-<h2 style="padding-left: 14px;"><a>Dashboard</a></h2>
-<h4 style=" text-align:right; color:#039; padding-right: 14px;">You are logged in as <?php 
-$username= $_SESSION["sess_username"];
-echo $username;
-?> !</h4>
-    <div id="form" style=" padding-left:140px; padding-right:20px; float:left; color:#06F;">
-    <h3 style="color:#C33"> Welcome!</h3><br>
-    <div style="padding-left:18px;">
-    <li><a href="personal_info.php">Personal Info</a></li><br>
-    <li><a href="educational_info.php">Educational Info</a></li><br>
-    <li><a href="contact_info.php">Contact Info</a></li><br>
-
-</div>
-    
-    </div>
-<div style="width:380px; float:right; padding-right:14px;">
+<h2 style="padding-left: 14px;">Dashboard</h2>
+<h5 style=" text-align:right; color:#039; padding-right: 14px;">You are logged in as </h5> 
+<?php
+//name
+?>
+<div>
+<div style="width:380px;">
 
 <div id="flip1"><h4>OFFICE OF THE PRINCIPAL</h4></div>
 <div id="panel1">
@@ -145,7 +129,11 @@ echo $username;
     </table>
     </div>
     
-
-</div>   
+    </div>
+    <div id="form" style=" background-color:#996; width:500px;">
+    blah
+    </div>
+    </div>
+    
 </body>
 </html>
